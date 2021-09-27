@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Rio/Scene/Scene_00_Start.unity
+    guid: a7611f10ec9bd5a41ac939d89c638d68
+  - enabled: 1
+    path: Assets/Rio/Scene/Scene_01_Info.unity
+    guid: 8fc3aef43914b7340956ad4360a63364
   m_configObjects: {}
