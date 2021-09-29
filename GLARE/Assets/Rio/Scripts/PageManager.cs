@@ -5,12 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class PageManager : MonoBehaviour
 {
-    
+    public List<GameObject> Canvas;
+    int Canvasindex = 0;
     //다음페이지로 이동하는 것
-    public void NextPage()
+    public void NextPage(int index)
     {
-        //int nextPage = SceneManager.GetActiveScene().buildIndex+1;
-        //SceneManager.LoadScene(nextPage);
-        SceneManager.LoadScene("Scene_01_Info");
+        StartCoroutine(Wait(index));
     }
+
+    //운동실행 시 다음 장면으로 넘어가는 함수
+    public void NextCanvas(int index)
+    {
+
+        Canvas[Canvasindex].SetActive(false);
+        Canvasindex += 1;
+        Canvas[Canvasindex].SetActive(true);
+    }
+
+    IEnumerator Wait(int index)
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(index);
+    }
+
+   
+
 }
