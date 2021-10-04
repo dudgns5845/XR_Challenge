@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class StartExercise_Rio : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class StartExercise_Rio : MonoBehaviour
     float nowProgress = 0;
     //운동 시간
     public float SetTime = 120f;
+
+    public VideoPlayer video;
 
     //상태 변수
     public State m_State = State.READY;
@@ -29,6 +32,7 @@ public class StartExercise_Rio : MonoBehaviour
         switch (m_State)
         {
             case State.READY:
+                Ready();
                 break;
             case State.START:
                 exe_Start();
@@ -40,8 +44,14 @@ public class StartExercise_Rio : MonoBehaviour
         }   
     }
 
+    void Ready()
+    {
+        video.Stop();
+    }
+
     void exe_Start()
     {
+        video.Play();
         nowProgress += Time.deltaTime;
         ProgressBar.fillAmount = nowProgress / 100;
     }
