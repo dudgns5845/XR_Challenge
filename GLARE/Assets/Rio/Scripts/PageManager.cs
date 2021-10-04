@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PageManager : MonoBehaviour
 {
@@ -13,6 +14,12 @@ public class PageManager : MonoBehaviour
         StartCoroutine(Wait(index));
     }
 
+    IEnumerator Wait(int index)
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(index);
+    }
+
     //운동실행 시 다음 장면으로 넘어가는 함수
     public void NextCanvas(int index)
     {
@@ -22,12 +29,5 @@ public class PageManager : MonoBehaviour
         Canvas[Canvasindex].SetActive(true);
     }
 
-    IEnumerator Wait(int index)
-    {
-        yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(index);
-    }
-
-   
-
+    
 }
