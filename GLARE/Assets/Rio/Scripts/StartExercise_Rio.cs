@@ -57,6 +57,11 @@ public class StartExercise_Rio : MonoBehaviour
         ProgressBar.fillAmount = nowProgress / SetTime;
         if(ProgressBar.fillAmount >= 1)
         {
+            if(WorkOutInfoManager_Rio.instance.WorkOutindexList_idx == WorkOutInfoManager_Rio.instance.chart.workOutChart.Count)
+            {
+                SceneManager.LoadScene(0);
+                return;
+            }
             WorkOutInfoManager_Rio.instance.nowIndexUpdate();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

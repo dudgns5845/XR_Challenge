@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.Video;
 
 public class WorkOutInfoManager_Rio : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class WorkOutInfoManager_Rio : MonoBehaviour
     //현재 운동 목록
     public int nowIndex;
 
+   
     private void Awake()
     {
         DontDestroyOnLoad(this);
@@ -39,8 +41,11 @@ public class WorkOutInfoManager_Rio : MonoBehaviour
 
     void ReadJson()
     {
-        string path = Application.dataPath + "/Resources/WorkOutInfoJson.json";
-        string data = File.ReadAllText(path);
+        TextAsset textAsset = Resources.Load("WorkOutInfoJson") as TextAsset;
+
+        //string path = Application.dataPath + "/Resources/WorkOutInfoJson.json";
+        //string data = File.ReadAllText(path);
+        string data = textAsset.ToString();
         chart = new WorkOutChart();
         chart = JsonUtility.FromJson<WorkOutChart>(data);
     }

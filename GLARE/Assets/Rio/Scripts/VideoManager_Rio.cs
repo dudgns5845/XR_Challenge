@@ -12,11 +12,18 @@ public class VideoManager_Rio : MonoBehaviour
     public VideoPlayer player;
 
     //현재 비디오 인덱스
-    public int index;
+    //public int index;
+
+    private void Start()
+    {
+        VideoPlay();
+        print(WorkOutInfoManager_Rio.instance.WorkOutindexList_idx-1);
+    }
 
     public void VideoPlay()
     {
-        player.clip = VideoClip[index];
+        //player.clip = VideoClip[index];
+        player.clip = VideoClip[WorkOutInfoManager_Rio.instance.WorkOutindexList_idx-1];
         player.Play();
     }
 
