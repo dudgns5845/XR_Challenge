@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
@@ -53,6 +54,11 @@ public class StartExercise_Rio : MonoBehaviour
     {
         video.Play();
         nowProgress += Time.deltaTime;
-        ProgressBar.fillAmount = nowProgress / 100;
+        ProgressBar.fillAmount = nowProgress / SetTime;
+        if(ProgressBar.fillAmount >= 1)
+        {
+            WorkOutInfoManager_Rio.instance.nowIndexUpdate();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }
