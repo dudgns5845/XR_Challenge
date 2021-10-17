@@ -36,8 +36,8 @@ public class TimeManager_Rio : MonoBehaviour
  
     void UpdateTime()
     {
-        TXT_Date.text = DateTime.Now.ToString("yyyy년 MM월 dd일") + "\n" + DateTime.Now.ToString("dddd");
-        TXT_Time.text = DateTime.Now.ToString("HH :mm");
+        //TXT_Date.text = DateTime.Now.ToString("yyyy년 MM월 dd일") + "\n" + DateTime.Now.ToString("dddd");
+        //TXT_Time.text = DateTime.Now.ToString("HH :mm");
     }
 
 

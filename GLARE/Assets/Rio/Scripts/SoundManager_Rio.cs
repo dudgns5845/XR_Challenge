@@ -42,6 +42,7 @@ public class SoundManager_Rio : MonoBehaviour
     //0버튼클릭
     public void EFT_Play(int index)
     {
+        print("출력");
         EFT_player.PlayOneShot(EFT_clips[index]);
     }
 }
