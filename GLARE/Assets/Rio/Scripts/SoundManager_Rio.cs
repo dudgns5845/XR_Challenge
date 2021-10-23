@@ -12,7 +12,6 @@ public class SoundManager_Rio : MonoBehaviour
     public List<AudioClip> BGM_clips;
     public List<AudioClip> EFT_clips;
 
-
     private void Awake()
     {
         DontDestroyOnLoad(this);
