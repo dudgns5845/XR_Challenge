@@ -8,15 +8,33 @@ public class PageManager : MonoBehaviour
 {
     public List<GameObject> Canvas;
     int Canvasindex = 0;
+
+    private void Start()
+    {
+        TakeRest();
+    }
     //다음페이지로 이동하는 것
     public void NextPage(int index)
     {
         StartCoroutine(Wait(index));
     }
 
+    public void TakeRest()
+    {
+        StartCoroutine("WaitFewSecond");
+    }
+
+    IEnumerator WaitFewSecond()
+    {
+        yield return new WaitForSeconds(5f);
+        NextCanvas(0);
+    }
+
+
+
     IEnumerator Wait(int index)
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(index);
     }
 

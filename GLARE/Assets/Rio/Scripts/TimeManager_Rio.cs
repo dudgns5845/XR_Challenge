@@ -27,8 +27,8 @@ public class TimeManager_Rio : MonoBehaviour
     {
         //TXT_Date = GameObject.Find("TXT_Date").GetComponent<Text>();
         //TXT_Time = GameObject.Find("TXT_Time").GetComponent<Text>();
-        TXT_Date.text = DateTime.Now.ToString("yyyy년 MM월 dd일") + "\n" + DateTime.Now.ToString("dddd") + " " + DateTime.Now.ToString("HH :mm");
-        TXT_Time.text = DateTime.Now.ToString("yyyy년 MM월 dd일") + "\n" + DateTime.Now.ToString("dddd") + " " + DateTime.Now.ToString("HH :mm");
+        TXT_Date.text = DateTime.Now.ToString("MM월 dd일") + "\n" + DateTime.Now.ToString("dddd") + " " + DateTime.Now.ToString("HH :mm");
+        TXT_Time.text = DateTime.Now.ToString("MM월 dd일") + "\n" + DateTime.Now.ToString("dddd") + " " + DateTime.Now.ToString("HH :mm");
         //TXT_Time.text = DateTime.Now.ToString("HH :mm");
     }
 
