@@ -11,6 +11,10 @@ public class PageManager : MonoBehaviour
 
     private void Start()
     {
+        if(SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            return;
+        }
         TakeRest();
     }
     //다음페이지로 이동하는 것
@@ -41,7 +45,6 @@ public class PageManager : MonoBehaviour
     //운동실행 시 다음 장면으로 넘어가는 함수
     public void NextCanvas(int index)
     {
-
         Canvas[Canvasindex].SetActive(false);
         Canvasindex += 1;
         Canvas[Canvasindex].SetActive(true);
