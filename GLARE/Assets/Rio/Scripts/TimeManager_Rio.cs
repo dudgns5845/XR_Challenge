@@ -25,8 +25,10 @@ public class TimeManager_Rio : MonoBehaviour
 
     private void Start()
     {
-        TXT_Date = GameObject.Find("TXT_Date").GetComponent<Text>();
-        TXT_Time = GameObject.Find("TXT_Time").GetComponent<Text>();
+        //TXT_Date = GameObject.Find("TXT_Date").GetComponent<Text>();
+        //TXT_Time = GameObject.Find("TXT_Time").GetComponent<Text>();
+        TXT_Date.text = DateTime.Now.ToString("yyyy³â MM¿ù ddÀÏ") + "\n" + DateTime.Now.ToString("dddd") + " " + DateTime.Now.ToString("HH :mm");
+        //TXT_Time.text = DateTime.Now.ToString("HH :mm");
     }
 
     private void Update()

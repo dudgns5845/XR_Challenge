@@ -14,8 +14,8 @@ public class SoundManager_Rio : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
-        if(manager == null)
+        //DontDestroyOnLoad(this);
+        if (manager == null)
         {
             manager = this;
         }

@@ -28,4 +28,9 @@ public class Narration_Rio : MonoBehaviour
         Player.clip = clip;
         Player.Play();
     }
+
+    public void Stop_Nar()
+    {
+        Player.Stop();
+    }
 }

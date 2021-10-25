@@ -39,6 +39,7 @@ public class StartExercise_Rio : MonoBehaviour
                 exe_Start();
                 break;
             case State.END:
+                StartCoroutine("exe_Finish");
                 break;
             case State.PAUSE:
                 break;
@@ -57,13 +58,34 @@ public class StartExercise_Rio : MonoBehaviour
         ProgressBar.fillAmount = nowProgress / SetTime;
         if(ProgressBar.fillAmount >= 1)
         {
-            if(WorkOutInfoManager_Rio.instance.WorkOutindexList_idx == WorkOutInfoManager_Rio.instance.chart.workOutChart.Count)
-            {
-                SceneManager.LoadScene(0);
-                return;
-            }
+            m_State = State.END;
+            //Finish 띄우고
+            TXT_Finish.gameObject.SetActive(!TXT_Finish.gameObject.activeSelf);
+            TXT_Finish.color = Color.blue;
+            TXT_Finish.text = "Finish";
+            //효과음 
+            SoundManager_Rio.manager.EFT_Play(1);
+            Particle.SetActive(true);
+        }
+    }
+
+    public GameObject Particle;
+    public Text TXT_Finish;
+    IEnumerator exe_Finish()
+    {
+        //2초 기다리고
+        yield return new WaitForSeconds(2f);
+        //운동 끝
+        if (WorkOutInfoManager_Rio.instance.WorkOutindexList_idx == WorkOutInfoManager_Rio.instance.chart.workOutChart.Count)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
             WorkOutInfoManager_Rio.instance.nowIndexUpdate();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
+
+    
 }
