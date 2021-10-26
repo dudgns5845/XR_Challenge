@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Rio/Scene/Scene_02_Play.unity
     guid: 35dd323674e56ce439c48eef89e9916c
+  - enabled: 1
+    path: Assets/Rio/Scene/Scene_03_Finish.unity
+    guid: 3b72be1e6890f47409582b1130ff23df
   m_configObjects: {}

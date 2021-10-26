@@ -78,7 +78,7 @@ public class StartExercise_Rio : MonoBehaviour
         //¿îµ¿ ³¡
         if (WorkOutInfoManager_Rio.instance.WorkOutindexList_idx == WorkOutInfoManager_Rio.instance.chart.workOutChart.Count)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("Scene_03_Finish");
         }
         else
         {
