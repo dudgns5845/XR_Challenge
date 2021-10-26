@@ -18,7 +18,7 @@ public class StartExercise_Rio : MonoBehaviour
 
     //상태 변수
     public State m_State = State.READY;
-    
+
     public enum State
     {
         READY,
@@ -43,7 +43,7 @@ public class StartExercise_Rio : MonoBehaviour
                 break;
             case State.PAUSE:
                 break;
-        }   
+        }
     }
 
     void Ready()
@@ -51,12 +51,21 @@ public class StartExercise_Rio : MonoBehaviour
         video.Stop();
     }
 
+    bool isPlay = false;
+
     void exe_Start()
     {
         video.Play();
         nowProgress += Time.deltaTime;
         ProgressBar.fillAmount = nowProgress / SetTime;
-        if(ProgressBar.fillAmount >= 1)
+        
+        if (ProgressBar.fillAmount >= 0.2f && !isPlay)
+        {
+            Narration_Rio.instance.playTip(WorkOutInfoManager_Rio.instance.nowIndex + "_0");
+            isPlay = true;
+        }
+
+        if (ProgressBar.fillAmount >= 1)
         {
             m_State = State.END;
             //Finish 띄우고
@@ -87,5 +96,5 @@ public class StartExercise_Rio : MonoBehaviour
         }
     }
 
-    
+
 }

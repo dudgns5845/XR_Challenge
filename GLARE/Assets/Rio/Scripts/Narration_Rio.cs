@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class Narration_Rio : MonoBehaviour
 {
+    static public Narration_Rio instance;
+
     public List<AudioClip> Explain_clips;
     public List<AudioClip> Tip_clips;
 
     public AudioSource Player;
+
+    void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {

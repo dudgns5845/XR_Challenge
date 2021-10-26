@@ -30,7 +30,7 @@ public class PageManager : MonoBehaviour
 
     IEnumerator WaitFewSecond()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(17f);
         NextCanvas(0);
     }
 
