@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProgressBar: {fileID: 1342668139}
-  SetTime: 60
+  SetTime: 40
   video: {fileID: 78086364}
   m_State: 0
   Particle: {fileID: 1253084796}

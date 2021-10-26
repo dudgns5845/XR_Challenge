@@ -52,6 +52,11 @@ public class WorkOutInfoManager_Rio : MonoBehaviour
 
     public void nowIndexUpdate()
     {
+        //if (WorkOutindexList_idx >= WorkOutindexList.Count)
+        //{
+        //    //WorkOutindexList_idx = 0;
+        //    return;
+        //}
         nowIndex = WorkOutindexList[WorkOutindexList_idx++] - 1;
     }
 }

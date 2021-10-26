@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SetText_Rio : MonoBehaviour
 {
-    public Narration_Rio Nar;
+    Narration_Rio Nar;
 
     private void Start()
     {
